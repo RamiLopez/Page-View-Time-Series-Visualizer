@@ -52,15 +52,17 @@ def draw_box_plot():
     # Draw box plots (using Seaborn)
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(28.8, 10.8))
     ax1 = sns.boxplot(data=df_box, x='year', y='value', ax=ax1, hue='year', legend=False, palette='pastel')
-    ax1.set_title('Year-wise Box Plot (Trend)')
-    ax1.set_ylabel('Page Views')
-    ax1.set_xlabel('Year')
+    ax1.set_title('Year-wise Box Plot (Trend)', fontsize=20)
+    ax1.set_ylabel('Page Views', fontsize=20)
+    ax1.set_xlabel('Year', fontsize=20)
+    ax1.tick_params(labelsize=15)
 
     month_order = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     ax2 = sns.boxplot(data=df_box, x='month', y='value', ax=ax2, order=month_order, hue='month', legend=False, palette='husl')
-    ax2.set_title('Month-wise Box Plot (Seasonality)')
-    ax2.set_ylabel('Page Views')
-    ax2.set_xlabel('Month')
+    ax2.set_title('Month-wise Box Plot (Seasonality)', fontsize=20)
+    ax2.set_ylabel('Page Views', fontsize=20)
+    ax2.set_xlabel('Month', fontsize=20)
+    ax2.tick_params(labelsize=15)
 
     # Save image and return fig (don't change this part)
     fig.savefig('box_plot.png')
